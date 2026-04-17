@@ -2,10 +2,6 @@
 import DefaultLayout from '@layouts/DefaultLayout.astro'
 import PageHeader from '@components/PageHeader.astro'
 import { Heading, Notification } from 'accessible-astro-components'
-import { getCollection } from 'astro:content'
-
-// Get all portfolio projects
-const projects = await getCollection('projects')
 
 // Define static pages with their descriptions
 const staticPages = [
@@ -18,11 +14,6 @@ const staticPages = [
     title: 'Accessible components',
     url: '/accessible-components',
     description: 'A comprehensive showcase of accessible UI components and design patterns for modern web development.',
-  },
-  {
-    title: 'Portfolio',
-    url: '/portfolio',
-    description: 'A collection of projects demonstrating accessible design and development practices.',
   },
   {
     title: 'Blog',
@@ -65,7 +56,7 @@ const staticPages = [
 
 <DefaultLayout
   title="Sitemap"
-  description="Complete site map showing all pages, portfolio projects, and sections available on our accessible website."
+  description="Complete site map showing all pages and sections available on our accessible website."
 >
   <PageHeader
     title="Sitemap"
@@ -98,38 +89,6 @@ const staticPages = [
         </div>
       </div>
 
-      <!-- Portfolio Projects Section -->
-      <div>
-        <Heading level="h2">Portfolio projects</Heading>
-        <p class="mb-6">
-          Explore our collection of {projects.length} accessibility-focused projects showcasing inclusive design and development
-          practices.
-        </p>
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {
-            projects.map((project) => (
-              <article>
-                <Heading level="h3" size="h6" class="mb-3">
-                  <a href={`/portfolio/${project.id}`}>{project.data.title}</a>
-                </Heading>
-                <p class="mb-3">{project.data.description}</p>
-                <div class="text-xs">
-                  <p class="mb-1">
-                    By: <span class="font-medium">{project.data.author}</span>
-                  </p>
-                  <p>
-                    URL:{' '}
-                    <code class="rounded bg-neutral-100 px-1 py-0.5 text-xs text-neutral-500 dark:bg-neutral-800 dark:text-neutral-500">
-                      /portfolio/{project.id}
-                    </code>
-                  </p>
-                </div>
-              </article>
-            ))
-          }
-        </div>
-      </div>
-
       <!-- Blog Section -->
       <div>
         <Heading level="h2" class="mb-6">Blog</Heading>
@@ -138,11 +97,11 @@ const staticPages = [
             <a href="/blog"> Blog posts </a>
           </Heading>
           <p>
-            Discover articles about web accessibility, development best practices, and inclusive design. Our blog
-            features dynamic content with pagination for easy browsing.
+            Discover articles about web accessibility, development best practices, and inclusive design. Our blog uses
+            production content fetched from WordPress GraphQL with pagination for easy browsing.
           </p>
           <div class="text-xs">
-            <p>Features: Dynamic content from JSONPlaceholder API</p>
+            <p>Features: Dynamic content from WordPress GraphQL</p>
             <p>
               Base URL: <code
                 class="rounded bg-neutral-100 px-1 py-0.5 text-xs text-neutral-500 dark:bg-neutral-800 dark:text-neutral-500"

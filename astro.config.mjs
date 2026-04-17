@@ -44,11 +44,11 @@ export default defineConfig({
   vite: enhanceConfigForWorkspace(viteConfig),
   env: {
     schema: {
-      BLOG_API_URL: envField.string({
+      WORDPRESS_GRAPHQL_ENDPOINT: envField.string({
         context: 'server',
         access: 'secret',
-        optional: true,
-        default: 'https://jsonplaceholder.typicode.com/posts',
+        optional: false,
+        default: 'https://uainclusive.getquick.io/graphql',
       }),
     },
   },

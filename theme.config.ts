@@ -33,11 +33,6 @@ export default defineThemeConfig({
         href: '/blog',
       },
       {
-        type: 'link',
-        label: 'Portfolio',
-        href: '/portfolio',
-      },
-      {
         label: 'Features',
         type: 'dropdown',
         items: [

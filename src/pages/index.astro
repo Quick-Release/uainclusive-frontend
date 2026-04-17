@@ -4,7 +4,6 @@ import Hero from '@components/Hero.astro'
 import Feature from '@components/Feature.astro'
 import Counter from '@components/Counter.astro'
 import ContentMedia from '@components/ContentMedia.astro'
-import FeaturedProjects from '@components/FeaturedProjects.astro'
 import FeaturedPosts from '@components/FeaturedPosts.astro'
 import { Accordion, AccordionItem, Avatar, AvatarGroup, Heading, Link } from 'accessible-astro-components'
 import { Icon } from 'astro-icon/components'
@@ -36,8 +35,8 @@ import { Icon } from 'astro-icon/components'
         <Feature icon="lucide:code" title="ESLint">
           Lint your code with strict a11y settings to ensure you stay on track with the WCAG standards.
         </Feature>
-        <Feature icon="lucide:bookmark" title="Blog & portfolio">
-          This theme comes with a fully integrated blog and portfolio, dynamic pages and SEO optimization.
+        <Feature icon="lucide:bookmark" title="Blog with WordPress">
+          This theme includes a fully integrated blog powered by production WordPress GraphQL content.
         </Feature>
         <Feature icon="lucide:file-text" title="Markdown & MDX">
           Easily use .md and .mdx pages to build your websites or use it with Netlify CMS.
@@ -66,7 +65,6 @@ import { Icon } from 'astro-icon/components'
       reaching WCAG AA compliance.
     </p>
   </ContentMedia>
-  <FeaturedProjects />
   <FeaturedPosts />
   <section class="my-64">
     <div class="container grid grid-cols-1 gap-12 md:grid-cols-2">
